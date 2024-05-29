@@ -15,12 +15,12 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.filterGroup = new System.Windows.Forms.GroupBox();
             this.lblFromDate = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
@@ -206,32 +206,32 @@
             // 
             // chartReport1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartReport1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartReport1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartReport1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartReport1.Legends.Add(legend1);
             this.chartReport1.Location = new System.Drawing.Point(397, 131);
             this.chartReport1.Name = "chartReport1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartReport1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartReport1.Series.Add(series1);
             this.chartReport1.Size = new System.Drawing.Size(376, 325);
             this.chartReport1.TabIndex = 6;
             this.chartReport1.Text = "chart1";
             // 
             // chartReport2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartReport2.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartReport2.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartReport2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartReport2.Legends.Add(legend2);
             this.chartReport2.Location = new System.Drawing.Point(397, 457);
             this.chartReport2.Name = "chartReport2";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartReport2.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartReport2.Series.Add(series2);
             this.chartReport2.Size = new System.Drawing.Size(376, 323);
             this.chartReport2.TabIndex = 7;
             this.chartReport2.Text = "chart2";
@@ -250,7 +250,7 @@
             this.Controls.Add(this.filterGroup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Отчеты";
+            this.Text = "Отчеты / Вариант 14";
             this.filterGroup.ResumeLayout(false);
             this.filterGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport1)).EndInit();

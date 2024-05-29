@@ -135,7 +135,7 @@ namespace project1
                                 MessageBox.Show("Нет данных для отображения.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             dgvReport1.DataSource = dt;
-                            UpdateChart(chartReport1, dt, "Товар", "Количество");
+                            UpdateChart(chartReport1, dt, "Товар", "Количество", SeriesChartType.Pie);
                         }
                     }
                 }
@@ -202,7 +202,7 @@ namespace project1
                                 MessageBox.Show("Нет данных для отображения.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             dgvReport2.DataSource = dt;
-                            UpdateChart(chartReport2, dt, "Товар", "Сумма_неоплаченная");
+                            UpdateChart(chartReport2, dt, "Товар", "Сумма_неоплаченная", SeriesChartType.Bar);
                         }
                     }
                 }
@@ -322,7 +322,7 @@ namespace project1
             cbClients.Enabled = !chkAllClients.Checked;
         }
 
-        private void UpdateChart(Chart chart, DataTable dataTable, string xValueMember, string yValueMember)
+        private void UpdateChart(Chart chart, DataTable dataTable, string xValueMember, string yValueMember, SeriesChartType chartType)
         {
             chart.Series.Clear();
             chart.ChartAreas.Clear();
@@ -330,14 +330,42 @@ namespace project1
 
             Series series = new Series
             {
-                ChartType = SeriesChartType.Pie,
+                ChartType = chartType,
                 XValueMember = xValueMember,
-                YValueMembers = yValueMember
+                YValueMembers = yValueMember,
+                IsValueShownAsLabel = true
             };
 
             chart.Series.Add(series);
             chart.DataSource = dataTable;
             chart.DataBind();
+
+            if (chartType == SeriesChartType.Pie)
+            {
+                series.Label = "#PERCENT{P0}";
+                series.LegendText = "#VALX"; 
+            }
+            else
+            {
+                series.IsValueShownAsLabel = true;
+                series.LabelFormat = "#,##0.00"; 
+            }
+
+            if (chartType == SeriesChartType.Bar || chartType == SeriesChartType.Column)
+            {
+                if (chart.Legends.Count > 0)
+                {
+                    chart.Legends[0].Enabled = false;
+                }
+            }
+            else
+            {
+                if (chart.Legends.Count == 0)
+                {
+                    chart.Legends.Add(new Legend());
+                }
+                chart.Legends[0].Enabled = true;
+            }
         }
     }
 }
